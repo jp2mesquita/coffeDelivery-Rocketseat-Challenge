@@ -92,7 +92,7 @@ export const catalog  = [
     description: "Drink gelado de café expresso com rum, creme de leite e hortelã",
     price: '9,90',
     image: cubano,
-    tags: "Especial - Alcoolico Gelado",
+    tags: "Especial - Alcoolico - Gelado",
   },   
   {
     id: "havainano",

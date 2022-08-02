@@ -1,7 +1,9 @@
 import produce from "immer";
 import { createContext, ReactNode, useState } from "react";
 import { catalog } from '../db/db'
-interface CatalogProps{
+
+
+export interface CatalogProps{
   id: string,
   description: string,
   price: string,
@@ -21,7 +23,7 @@ interface CatalogContextType{
   listFiltered: CatalogProps[],
   activeFilters: FilterProps,
   changeActiveFilters: (tagToFilter: string) => FilterProps | void,
-  filterList: (tagToFilter: string) => void
+  catalogFilter: (tagToFilter: string) => void
 }
 
 export const CatalogContext = createContext({} as CatalogContextType)
@@ -64,6 +66,7 @@ export function CatalogContextProvider( {children} : CatalogContextProviderProps
       setActiveFilters(filterUpdate)
       return filterUpdate
     }
+
     if(tagToFilter=="Com Leite"){
       const filterUpdate =  produce(activeFilters, (draft) => {
         const newValue: boolean = !draft.withMilk
@@ -73,6 +76,7 @@ export function CatalogContextProvider( {children} : CatalogContextProviderProps
       setActiveFilters(filterUpdate)
       return filterUpdate
     }
+
     if(tagToFilter=="Alcoolico"){
       const filterUpdate =  produce(activeFilters, (draft) => {
         const newValue: boolean = !draft.alcolic
@@ -82,6 +86,7 @@ export function CatalogContextProvider( {children} : CatalogContextProviderProps
       setActiveFilters(filterUpdate)
       return filterUpdate
     }
+    
     if(tagToFilter=="Gelado"){
       const filterUpdate =  produce(activeFilters, (draft) => {
         const newValue: boolean = !draft.iced
@@ -93,110 +98,72 @@ export function CatalogContextProvider( {children} : CatalogContextProviderProps
     }
   }
 
-
-  function catalogFilter(notFilters: any[], tagToFilter : string){
-    const filteredList = notFilters.reduce(function (prev, curr){
-      const tradicionalOrNot = curr.tags.includes(tagToFilter) ? 'filtered' : 'notFiltered'
-
-      prev[tradicionalOrNot].push(curr);
-      return prev
-    },{ filtered: []  , notFiltered: [] })
-
-    return filteredList
+  function listFilter(tagToFilter : string, notFilters: CatalogProps[]){
+    const filtered = notFilters.filter(item => {
+      return item.tags.includes(tagToFilter)
+    })
+    return filtered
   }
 
-  function filterList( tagToFilter: string ){
+
+  function catalogFilter( tagToFilter: string ){
     const actives : FilterProps | any = changeActiveFilters(tagToFilter)
 
-    let filters: any[] = []
     let notFilters: CatalogProps[] = catalog
 
     let count = 0
-
-    console.log(activeFilters)
     
     if(actives.tradicional){
-      
-      const aux = catalogFilter(notFilters, "Tradicional")
-
-      if(aux.filtered.length > 0){
-        // filters = []
-        filters.push(aux.filtered)
+      const filtered = listFilter("Tradicional", notFilters)
+      if(filtered){
         count++
       }
-      notFilters = aux.notFiltered
- 
+      notFilters = filtered
     }
 
     if(actives.especial){
-
-      const aux = catalogFilter(notFilters, "Especial")
-
-      if(aux.filtered.length > 0){
-        // filters = []
-        filters.push(aux.filtered)
+      const filtered = listFilter("Especial", notFilters)
+      if(filtered){
         count++
       }
-      notFilters = aux.notFiltered
-      
+      notFilters = filtered
     }
 
     if(actives.withMilk){
-
-      const aux = catalogFilter(notFilters, "Com Leite")
-
-      if(aux.filtered.length > 0){
-        // filters = []
-        filters.push(aux.filtered)
+      const filtered = listFilter("Com Leite", notFilters)
+      if(filtered){
         count++
       }
-      notFilters = aux.notFiltered
+      notFilters = filtered
     }
 
     if(actives.alcolic){
-
-      const aux = catalogFilter(notFilters, "Alcoolico")
-  
-      if(aux.filtered.length > 0){
-        // filters = []
-        filters.push(aux.filtered)
+      const filtered = listFilter("Alcoolico", notFilters)
+      if(filtered){
         count++
       }
-      notFilters = aux.notFiltered
-    
+      notFilters = filtered
     }
 
     if(actives.iced){
-
-      const aux = catalogFilter(notFilters, "Gelado")
-
-      if(aux.filtered.length > 0){
-        // filters = []
-        filters.push(aux.filtered)
+      const filtered = listFilter("Gelado", notFilters)
+      if(filtered){
         count++
       }
-      notFilters = aux.notFiltered
-     
+      notFilters = filtered
     }
-
+    
     if(count>0){
-      const catalogFiltered : CatalogProps[] = []
-      filters.forEach(element => {
-        catalogFiltered.push(...element)
-      });
-      setListFiltered(catalogFiltered)      
+      setListFiltered(notFilters)      
     }else{
       setListFiltered(catalog)
     }
-
-   
   }
-
 
   return(
     <CatalogContext.Provider value={{
       changeActiveFilters,
-      filterList,
+      catalogFilter,
       listFiltered,
       activeFilters,
     }}>

@@ -12,11 +12,11 @@ import { CatalogContext, CatalogProps } from "../../contexts/catalogContext";
 
 export function Home() {
 
-  const { changeActiveFilters, filterList, activeFilters, listFiltered } = useContext(CatalogContext)
+  const { changeActiveFilters, catalogFilter, activeFilters, listFiltered } = useContext(CatalogContext)
   const [catalogList, setCatalogList] = useState<CatalogProps[]>(catalog)
 
   function handleFilter( tagToFilter: string){
-    filterList(tagToFilter)
+    catalogFilter(tagToFilter)
   }
 
 
