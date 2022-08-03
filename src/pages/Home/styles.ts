@@ -52,6 +52,14 @@ export const BaseButton = styled.button<Active>`
 
   text-transform: uppercase;
 
+  cursor: pointer;
+
+  transition: background .1s;
+  
+  :hover{
+    background: ${(props) => props.theme["yellow-light"]}
+  }
+
 `
 export const CatalogContainer = styled.div`
 
