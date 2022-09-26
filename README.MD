@@ -86,7 +86,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/jp2mesquita/coffeDelivery-Rocketseat-Challenge>
+$ git clone https://github.com/jp2mesquita/coffeDelivery-Rocketseat-Challenge
 
 #Acesse a pasta do projeto no terminal/cmd
 $ cd coffeDelivery-Rocketseat-Challenge
