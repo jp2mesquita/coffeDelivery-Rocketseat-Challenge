@@ -27,11 +27,11 @@ Nesta aplicação web o usuário terá acesso a um catálago de cafés disponív
 ## 📋 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](#Sobre)
-   * [Tabela de Conteúdos](#tabela-de-conteudo)
-   * [Tecnologias](#tecnologias)
-   * [Pré-requisitos](#pre-requisitos)
-   * [Como rodar a aplicação web](#como-rodar-a-aplicacao-web)
+   * [Sobre o Projeto](##sobre-o-projeto)
+   * [Tabela de Conteúdos](##tabela-de-conteudo)
+   * [Tecnologias](##tecnologias)
+   * [Pré-requisitos](##pre-requisitos)
+   * [Como rodar a aplicação web](##como-rodar-a-aplicacao-web)
 <!--te-->
 
 ## ⚒️ Tecnologias
