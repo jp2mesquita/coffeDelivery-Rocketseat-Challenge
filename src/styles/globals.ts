@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme['base-text']};
 
     @media (max-width: 500px){
-      min-width: 450px;
+      min-width: 500px;
     }
   }
 

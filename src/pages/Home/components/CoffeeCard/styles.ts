@@ -127,15 +127,15 @@ export const Card = styled.div`
   }
 
   @media (max-width: 800px){
-    width: 10rem;
-    height: 15rem;
-    padding-inline: .5rem;
+    width: 12rem;
+    height: 14rem;
+    padding-inline: 1rem;
     strong{
-      font-size: .85rem;
+      font-size: .9rem;
       margin-top: .5rem;
     };
     p{
-      font-size: .6rem;
+      font-size: .65rem;
     }
     >div:last-child{
 

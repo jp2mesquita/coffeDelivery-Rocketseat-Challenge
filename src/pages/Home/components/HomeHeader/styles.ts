@@ -209,7 +209,7 @@ export const AtributesList = styled.div`
     /* width: 100%; */
     gap: 0;
     justify-content: space-between;
-    /* padding-inline: 2rem; */
+    padding-inline: 0rem;
   }
 
   @media (max-width: 700px){
@@ -218,6 +218,6 @@ export const AtributesList = styled.div`
     width: 100%;
     align-items: flex-start;
     
-    padding-inline: 2rem;
+    padding-inline: 0rem;
   }
 `
