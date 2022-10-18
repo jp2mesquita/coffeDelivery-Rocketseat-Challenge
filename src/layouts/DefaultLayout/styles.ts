@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LayoutWrapper = styled.div`
-  min-width: 1120px;
+  /* min-width: 1120px; */
   max-width: 1440px;
   margin-inline: auto;
   padding-inline: 10rem;
@@ -9,4 +9,15 @@ export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1440px){
+    max-width: 1180px;
+    padding-inline: 6rem;
+  }
+
+  @media (max-width: 1180px){
+    max-width: 980px;
+    padding-inline: 4rem;
+  }
+
+ 
 `

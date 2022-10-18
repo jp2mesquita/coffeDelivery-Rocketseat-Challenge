@@ -4,7 +4,6 @@ import { ShoppingCart, MapPin } from 'phosphor-react'
 import { NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../contexts/cartContext";
-import { BaseIcon } from "../BaseIcon";
 import { lightTheme } from "../../styles/themes/light";
 
 export function Header(){

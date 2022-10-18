@@ -11,6 +11,9 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${props => props.theme.background};
     color: ${props => props.theme['base-text']};
 
+    @media (max-width: 500px){
+      min-width: 450px;
+    }
   }
 
   body, input, textarea, button{

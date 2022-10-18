@@ -8,7 +8,7 @@ export const HeaderContainer = styled.nav`
   padding-block: 2rem;
 
   max-width: 1120px;
-  min-width: 1120px;
+  /* min-width: 1120px; */
 
   a:last-child{
     color: ${(props) => props.theme["yellow-dark"]};

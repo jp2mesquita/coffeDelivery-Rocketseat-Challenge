@@ -95,7 +95,7 @@ export const catalog  = [
     tags: "Especial - Alcoolico - Gelado",
   },   
   {
-    id: "havainano",
+    id: "Havainano",
     description: "Bebida adocicada preparada com café e leite de coco",
     price: '9,90',
     image: havaiano,

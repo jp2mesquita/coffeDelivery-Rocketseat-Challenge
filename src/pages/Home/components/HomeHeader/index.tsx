@@ -30,6 +30,10 @@ export function HomeHeader(){
               </li>
           </ul>
 
+          <div>
+            <img src={coffeeCup} alt="" />
+          </div>
+
           <ul>
             <li>
             <BaseIcon bgColor={lightTheme["base-text"]}>

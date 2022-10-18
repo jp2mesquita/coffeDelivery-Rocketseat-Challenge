@@ -13,4 +13,11 @@ export const GenericIcon = styled.span<{color : string} >`
   background-color: ${(props) => props.color};
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 980px){
+    padding: .45rem;
+    svg{
+      width: 15px;
+    }
+  }
 `

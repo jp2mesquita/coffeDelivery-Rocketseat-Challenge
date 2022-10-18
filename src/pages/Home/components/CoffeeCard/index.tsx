@@ -55,11 +55,13 @@ export function CoffeeCard({id, description, price, image, tags} : CoffeeCardPro
         <img src={image} alt="" />
       </CoffeeImage>
       
+      <section>
+
       
       <Properties>
         {
           splitTags.map((tag) =>
-            {
+          {
             return(
               <Prop key={tag}>
                 {tag}
@@ -78,6 +80,7 @@ export function CoffeeCard({id, description, price, image, tags} : CoffeeCardPro
           {description}
         </p>
       </div>
+      </section>
 
       <div>
         <Price>
