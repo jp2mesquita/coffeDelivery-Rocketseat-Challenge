@@ -3,11 +3,29 @@ import styled from "styled-components";
 export const DeliveryContainer = styled.div`
   font-size: 2rem;
   display: flex;
+  width: 100%;
   align-items: flex-end;
   margin-top: 5rem;
   gap: 6.375rem;
   /* justify-content: space-between; */
   
+  >div:last-child{
+    display: flex;
+    flex:1;
+    img{
+      
+      width: 100%;
+      
+    }
+  }
+
+  @media (max-width: 980px){
+    flex-direction: column;
+    align-items: center;
+    div{
+      width: 100%;
+    }
+  }
 `
 
 export const DeliveryHeader = styled.header`
@@ -24,6 +42,15 @@ export const DeliveryHeader = styled.header`
     font-weight: 400;
     color: ${props => props.theme["base-subtitle"]}
   }
+
+  @media (max-width: 1180px){
+    strong{
+      font-size: 1.5rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+  }
 `
 
 export const DeliveryResume = styled.div`
@@ -31,7 +58,7 @@ export const DeliveryResume = styled.div`
   margin-top: 2.5rem;
   font-size: 1rem;
 
-  width: 32.875rem;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -60,4 +87,5 @@ export const DeliveryResume = styled.div`
       }
     }
   }
+  
 `

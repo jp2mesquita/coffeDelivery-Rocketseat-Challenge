@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex:1;
   padding: 2.5rem;
   margin-top: 1rem;
 
@@ -35,6 +38,21 @@ export const CartContainer = styled.section`
       font-size: 1.25rem;
     }
   }
+
+  @media (max-width: 1180px){
+    padding: 2rem;
+
+    section{
+      margin-top: 1.25rem;
+
+      p{
+        font-size: .85rem;
+      }
+      p:nth-child(3){
+        font-size: 1rem;
+      }
+    }
+  }
 `
 
 export const CartContent = styled.div`
@@ -62,6 +80,24 @@ export const CartContent = styled.div`
 
   >div:nth-child(2){
     flex: 1;
+  }
+
+  @media (max-width: 1180px){
+    height: 7rem;
+
+    img{
+      width: 3.75rem;
+      margin-right: 1rem;
+    }
+
+    p{
+      font-size: .9rem;
+    }
+    >div:nth-child(3){
+      span{
+        font-size: 1rem;
+      }
+    }
   }
 `
 
@@ -105,6 +141,13 @@ export const ControlerButton = styled(BaseButton)`
   &:hover{
     color: ${(props) => props.theme["purple-dark"]};
   }
+
+  @media (max-width: 1180px){
+    span{
+      width: 1rem;
+      font-size: .9rem;
+    }
+  }
 `
 
 export const RemoveButton = styled(BaseButton)`
@@ -129,6 +172,13 @@ export const RemoveButton = styled(BaseButton)`
     }
     
   }
+
+  @media (max-width: 1180px){
+    span{
+      font-size: .75rem;
+    }
+    
+  }
 `
 
 export const FinishOrderButton = styled.button`
@@ -143,7 +193,7 @@ export const FinishOrderButton = styled.button`
   padding: .75rem .5rem;
   margin-top: 1.5rem;
 
-  width: 23rem;
+  width: 100%;
   height: 2.875rem;
 
   color: ${props => props.theme["background"]};

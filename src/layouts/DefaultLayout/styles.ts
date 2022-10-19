@@ -19,5 +19,9 @@ export const LayoutWrapper = styled.div`
     padding-inline: 4rem;
   }
 
+  @media (max-width: 500px){
+    max-width: 980px;
+    padding-inline: 2rem;
+  }
  
 `

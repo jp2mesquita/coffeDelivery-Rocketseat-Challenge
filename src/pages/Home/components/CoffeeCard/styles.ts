@@ -160,7 +160,7 @@ export const Card = styled.div`
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      margin-left:6rem;
+      margin-left:1.5rem;
       text-align: left;
       padding-right: .5rem;
       flex: 1;
@@ -237,8 +237,9 @@ export const CoffeeImage = styled.div`
     }
   }
   @media (max-width: 700px){
-    /* top: 50%;
-    transform: translateY(-50%) translateX(-50%); */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
     left: 10%;
     img{
       width: 5rem;

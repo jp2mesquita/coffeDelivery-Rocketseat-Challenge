@@ -131,78 +131,93 @@ export function DeliveryDataForm(){
           </FormHeader>
           <form action="" onSubmit={handleSubmit(handleNewOrder)}  id="userDataForm">
 
+            <div>
+
+              <StreetInput 
+                id='adress'
+                placeholder="Rua"
+                {...register('adress')}
+
+                />
+              <ErrorMessage 
+                errors={errors} 
+                name="adress"
+                render={({message}) => <b>{message} </b>}
+                />
+
+              <NumberInput 
+                id="number" 
+                placeholder="Número"
+                {...register('number', {valueAsNumber: true})}
+                />
+              <ErrorMessage 
+                errors={errors} 
+                name="number"
+                render={({message}) => <b>{message} </b>}
+              />
+
+            </div>
+
+            <div>
+
+              
+              <CityInput
+                id="city" 
+                placeholder="Cidade" 
+                {...register('city')} 
+                />
+              <ErrorMessage 
+                errors={errors} 
+                name="city"
+                render={({message}) => <b>{message}</b>}
+                />
+
+              <UFInput 
+                id="UF" 
+                placeholder="UF" 
+                {...register('UF')}
+              />
+
+            <ErrorMessage 
+              errors={errors} 
+              name="UF"
+              render={({message}) => <b>{message} </b>}
+            />    
+            
             <CEPInput
               id="CEP"  
               placeholder="CEP"
               {...register('CEP', {valueAsNumber: true})}
-            />
+              />
             <ErrorMessage 
               errors={errors} 
               name="CEP"
               render={({message}) => <b>{message} </b>}
             />
+              
+            </div>
 
-            <StreetInput 
-              id='adress'
-              placeholder="Rua"
-              {...register('adress')}
+            <div>
 
-            />
-            <ErrorMessage 
-              errors={errors} 
-              name="adress"
-              render={({message}) => <b>{message} </b>}
-            />
+              <DistrictInput 
+                id="district" 
+                placeholder="Bairro" 
+                {...register('district')}
+                />
+              <ErrorMessage 
+                errors={errors} 
+                name="district"
+                render={({message}) => <b>{message} </b>}
+                />
 
-            <NumberInput 
-              id="number" 
-              placeholder="Número"
-              {...register('number', {valueAsNumber: true})}
-            />
-            <ErrorMessage 
-              errors={errors} 
-              name="number"
-              render={({message}) => <b>{message} </b>}
-            />
-
-            <ComplementInput 
-              id="complement" 
-              placeholder="Complemento" 
-              {...register('complement')}
-            />
-
-            <DistrictInput 
-              id="district" 
-              placeholder="Bairro" 
-              {...register('district')}
-            />
-            <ErrorMessage 
-              errors={errors} 
-              name="district"
-              render={({message}) => <b>{message} </b>}
-            />
-
-            <CityInput
-              id="city" 
-              placeholder="Cidade" 
-              {...register('city')} 
-            />
-            <ErrorMessage 
-              errors={errors} 
-              name="city"
-              render={({message}) => <b>{message}</b>}
-            />
+              <ComplementInput 
+                id="complement" 
+                placeholder="Complemento" 
+                {...register('complement')}
+              />
+            </div>
             
-            <UFInput 
-              id="UF" 
-              placeholder="UF" 
-              {...register('UF')}
-            />
-            <ErrorMessage 
-              errors={errors} 
-              name="UF"
-              render={({message}) => <b>{message} </b>}
-            />
+            
 
 
           </form>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  /* width: 100%; */
 `
 
 export const InputContainer = styled.div`
@@ -12,10 +12,28 @@ export const InputContainer = styled.div`
   margin-top: 1rem;
   border-radius: 6px;
 
-  b{
+  form{
+    display: flex;
+    flex-direction: column;
+    div{
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+  }
 
+  b{
     color: red;
     font-size: 1rem;
+  }
+
+  @media (max-width: 500px){
+    form{
+      div{
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
+      }
+    }
   }
 `
 
@@ -58,37 +76,41 @@ const BaseInput = styled.input`
   margin-bottom: 1rem;
 `
 
-export const CEPInput = styled(BaseInput)`
-  width: 12.5rem;
-`
-
 export const StreetInput = styled(BaseInput)`
-  width: 35rem;
+  width: 100%;
 `
 export const NumberInput = styled(BaseInput)`
-  width: 12.5rem;
-  margin-right: .75rem;
+  width: 20%;
+
+  @media (max-width: 800px){
+    width: 40%;
+  }
+`
+
+export const CityInput = styled(BaseInput)`
+  width: 100%;
 
 `
-export const ComplementInput = styled(BaseInput)`
-  width: 21.75rem;
+
+export const UFInput = styled(BaseInput)`
+  width: 20%;
+  @media (max-width: 800px){
+    width: 40%;
+  }
+  
+`
+export const CEPInput = styled(BaseInput)`
+  width: 60%;
+
 `
 export const DistrictInput = styled(BaseInput)`
   width: 12.5rem;
-  margin-bottom:0;
-  margin-right: .75rem;
+  
 `
-export const CityInput = styled(BaseInput)`
-  width: 17.25rem;
-  margin-bottom: 0;
-  margin-right: .75rem;
+export const ComplementInput = styled(BaseInput)`
+  width: 100%;
 
 `
-export const UFInput = styled(BaseInput)`
-  width: 3.75rem;
-  margin-bottom: 0;
-`
-
 export const PaymentChoice = styled.div`
   background-color: ${props => props.theme["base-card"]};
   padding: 2.5rem;
@@ -98,10 +120,14 @@ export const PaymentChoice = styled.div`
   div{
     display: flex;
     align-items: left;
-    /* justify-content: space-between; */
-    gap: .75rem;
+    gap: .5rem;
   }
 
+  @media (max-width: 1180px){
+    div{
+      flex-wrap: wrap;
+    }
+  }
 `
 
 export const PaymentHeader = styled(BaseHeader)`
@@ -111,10 +137,10 @@ export const PaymentHeader = styled(BaseHeader)`
 
 const BaseChoiceButton = styled.button`
   padding: 1rem;
-  width: 11.166875rem;
-  height: 3.1875rem;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .75rem;
 
   background-color: ${props => props.theme["base-button"]};
@@ -143,6 +169,27 @@ const BaseChoiceButton = styled.button`
     cursor: pointer;
   }
 
+  @media (max-width: 1440px){
+    gap: 0;
+    p{
+      font-size: .65rem;
+      line-height: 100%;
+    }
+    svg{
+      margin-right: .5rem;
+    }
+  }
+
+  @media (max-width: 1180px){
+    gap: 0;
+    p{
+      font-size: .6rem;
+      line-height: 100%;
+    }
+    svg{
+      margin-left: .5rem;
+    }
+  }
 `
 
 interface CreditCardButtonProps{
